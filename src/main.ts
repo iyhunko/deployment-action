@@ -118,7 +118,7 @@ async function run(): Promise<void> {
     core.setOutput('environment_url', environmentUrl)
   } catch (error: any) {
     core.error(error)
-    core.setFailed(`Error creating GitHub deployment: ${error.message}`)
+    core.setFailed(`Error1 creating GitHub deployment: ${error.message}`)
   }
 }
 
