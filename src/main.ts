@@ -101,7 +101,10 @@ async function run(): Promise<void> {
       // TODO: Should 202 be handled differently? Either way we get no ID
       throw new Error(deployment.data.message)
     }
-
+    core.info(`before createDeploymentStatus`)
+    core.info(`deployment_id: ${deployment.data.id}`)
+    core.info(`logUrl: ${logUrl}`)
+    core.info(`environmentUrl: ${environmentUrl}`)
     await octokit.rest.repos.createDeploymentStatus({
       owner,
       repo,
