@@ -86,6 +86,9 @@ function run() {
             const requiredContexts = core.getInput('required-contexts', {
                 required: false
             });
+            core.info(`owner: ${owner}`);
+            core.info(`repo: ${repo}`);
+            core.info(`ref: ${ref}`);
             const deployment = yield octokit.rest.repos.createDeployment({
                 owner,
                 repo,
@@ -120,7 +123,7 @@ function run() {
         }
         catch (error) {
             core.error(error);
-            core.setFailed(`Error creating GitHub deployment: ${error.message}`);
+            core.setFailed(`Error1 creating GitHub deployment: ${error.message}`);
         }
     });
 }
