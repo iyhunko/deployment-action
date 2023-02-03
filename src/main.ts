@@ -79,6 +79,9 @@ async function run(): Promise<void> {
       required: false
     })
 
+    core.info(`owner: ${owner}`);
+    core.info(`repo: ${repo}`);
+    core.info(`ref: ${ref}`);
     const deployment = await octokit.rest.repos.createDeployment({
       owner,
       repo,
